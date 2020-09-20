@@ -44,10 +44,12 @@ export default class App extends Component {
       case '/':
       case '.':
         const lastChar = this.state.resultText.split('').pop()
-        console.log(lastChar)
         if(this.operations.indexOf(lastChar) > 0 || lastChar == '.') return
         if(this.state.text == "" ) return
-        if((this.state.resultText + operation).split(".").length - 1 > 1) return
+        let splited = (this.state.resultText + operation).split('+').join(',').split('-').join(',').split('/').join(',').split('*')
+        let splited2 = splited[splited.length-1].split(',')
+        console.log(splited2)
+        if(splited2[splited2.length-1].split('.').length - 1 > 1) return
         this.setState({
           resultText: this.state.resultText + operation
         })
