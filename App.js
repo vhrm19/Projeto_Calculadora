@@ -20,7 +20,6 @@ export default class App extends Component {
 
   buttonPressed(text){
     if(this.state.resultText[this.state.resultText.length - 1] == '0' && text == '0') return
-    if(this.state.resultText == '' && text == 0) return
     this.setState({
       resultText: this.state.resultText+text
     })
